@@ -82,7 +82,7 @@ class c3api:
         ordered_list=[self.api_root_url, self.api_version, data_type, api]
         return '/'.join([str(i) for i in ordered_list])
 
-    def query(self, data_type, parameters, api='fetch'):
+    def request(self, data_type, parameters, api='fetch'):
         """
         A function to make a post request to the C3.ai covid19 Data Lake
         and return the results in a python formatted dictionary
