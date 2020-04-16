@@ -1,1 +1,1 @@
-pdoc --html c3covid19/
+pdoc --html c3covid19/ --force
