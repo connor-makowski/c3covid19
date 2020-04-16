@@ -1,6 +1,6 @@
 import requests
 
-class c3data:
+class c3api:
     def __init__(self, api_root_url="https://api.c3.ai/covid/api", api_version=1, api_headers={'Content-type':'application/json','Accept':'application/json'}):
         self.api_root_url=api_root_url
         self.api_version=api_version

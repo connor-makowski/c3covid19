@@ -1,6 +1,6 @@
-from c3covid19 import c3data
+from c3covid19 import c3api
 
-cnx=c3data()
+cnx=c3api()
 germany_request={
   "spec": {
     "filter": 'id == "Germany"'

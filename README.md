@@ -19,9 +19,9 @@ pip install c3covid19
 ```
 
 ### Getting Started
-1) Import c3data into your project
+1) Import c3api into your project
 ```
-from c3covid19 import c3data
+from c3covid19 import c3api
 ```
 
 
@@ -33,9 +33,9 @@ from c3covid19 import c3data
 
 ### Full Example
 ```py
-from c3covid19 import c3data
+from c3covid19 import c3api
 
-cnx=c3data()
+cnx=c3api()
 germany_request={
   "spec": {
     "filter": 'id == "Germany"'
