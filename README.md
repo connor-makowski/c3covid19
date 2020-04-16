@@ -24,7 +24,7 @@ pip install c3covid19
 from c3covid19 import c3api
 ```
 
-2) Initialize an api connection object
+2) Initialize a `c3api` connection object
 ```py
 cnx=c3api()
 ```
@@ -38,9 +38,9 @@ germany_request={
 }
 ```
 
-4) Query from the connection object:
+4) request from the connection object:
 ```py
-germany=cnx.query(data_type='outbreaklocation', parameters=germany_request, api='fetch')
+germany=cnx.request(data_type='outbreaklocation', parameters=germany_request, api='fetch')
 ```
   - Notes:
     - `data_type` is the data "Type" as specified by the c3.ai covid19 documentation [here](https://c3.ai/covid-19-api-documentation/#section/C3.ai-APIs-for-COVID-19-Unified-Data)
@@ -68,7 +68,7 @@ germany_request={
   }
 }
 
-germany=cnx.query(data_type='outbreaklocation', parameters=germany_request)
+germany=cnx.request(data_type='outbreaklocation', parameters=germany_request)
 
 print(germany)
 ```

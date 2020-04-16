@@ -108,7 +108,7 @@ class c3api:
         ordered_list=[self.api_root_url, self.api_version, data_type, api]
         return &#39;/&#39;.join([str(i) for i in ordered_list])
 
-    def query(self, data_type, parameters, api=&#39;fetch&#39;):
+    def request(self, data_type, parameters, api=&#39;fetch&#39;):
         &#34;&#34;&#34;
         A function to make a post request to the C3.ai covid19 Data Lake
         and return the results in a python formatted dictionary
@@ -260,7 +260,7 @@ class c3api:
         ordered_list=[self.api_root_url, self.api_version, data_type, api]
         return &#39;/&#39;.join([str(i) for i in ordered_list])
 
-    def query(self, data_type, parameters, api=&#39;fetch&#39;):
+    def request(self, data_type, parameters, api=&#39;fetch&#39;):
         &#34;&#34;&#34;
         A function to make a post request to the C3.ai covid19 Data Lake
         and return the results in a python formatted dictionary
@@ -424,8 +424,8 @@ class c3api:
     return &#39;/&#39;.join([str(i) for i in ordered_list])</code></pre>
 </details>
 </dd>
-<dt id="c3covid19.c3api.c3api.query"><code class="name flex">
-<span>def <span class="ident">query</span></span>(<span>self, data_type, parameters, api='fetch')</span>
+<dt id="c3covid19.c3api.c3api.request"><code class="name flex">
+<span>def <span class="ident">request</span></span>(<span>self, data_type, parameters, api='fetch')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>A function to make a post request to the C3.ai covid19 Data Lake
@@ -456,7 +456,7 @@ and return the results in a python formatted dictionary</p>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def query(self, data_type, parameters, api=&#39;fetch&#39;):
+<pre><code class="python">def request(self, data_type, parameters, api=&#39;fetch&#39;):
     &#34;&#34;&#34;
     A function to make a post request to the C3.ai covid19 Data Lake
     and return the results in a python formatted dictionary
@@ -518,7 +518,7 @@ and return the results in a python formatted dictionary</p>
 <li><code><a title="c3covid19.c3api.c3api.change_api_root_url" href="#c3covid19.c3api.c3api.change_api_root_url">change_api_root_url</a></code></li>
 <li><code><a title="c3covid19.c3api.c3api.change_api_version" href="#c3covid19.c3api.c3api.change_api_version">change_api_version</a></code></li>
 <li><code><a title="c3covid19.c3api.c3api.get_url" href="#c3covid19.c3api.c3api.get_url">get_url</a></code></li>
-<li><code><a title="c3covid19.c3api.c3api.query" href="#c3covid19.c3api.c3api.query">query</a></code></li>
+<li><code><a title="c3covid19.c3api.c3api.request" href="#c3covid19.c3api.c3api.request">request</a></code></li>
 </ul>
 </li>
 </ul>

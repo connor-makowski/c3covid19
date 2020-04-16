@@ -7,6 +7,6 @@ germany_request={
   }
 }
 
-germany=cnx.query(data_type='outbreaklocation', parameters=germany_request, api='fetch')
+germany=cnx.request(data_type='outbreaklocation', parameters=germany_request, api='fetch')
 
 print(germany)
