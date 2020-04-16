@@ -3,7 +3,7 @@ c3covid19
 Python wrapper for easy use of the [C3 Covid 19 Data Lake](https://c3.ai/covid-19-api-documentation/#section/Using-C3.ai-APIs).
 
 
-Full Documentation
+Full API Documentation
 --------
 https://connor-makowski.github.io/c3covid19/
 

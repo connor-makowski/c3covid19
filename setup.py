@@ -8,7 +8,7 @@ setup(
   author = 'Connor Makowski',
   author_email = 'connor.m.makowski@gmail.com',
   url = 'https://github.com/connor-makowski/c3covid19',
-  download_url = 'https://github.com/connor-makowski/c3covid19/archive/v_01.tar.gz',
+  download_url = 'https://github.com/connor-makowski/c3covid19/dist/c3covid19-0.1.tar.gz',
   keywords = ['data', 'lake', 'covid19', 'c3', 'c3covid19'],
   install_requires=[
         'requests>=2',
