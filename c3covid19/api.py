@@ -7,10 +7,11 @@ class c3api(out_formats):
         Initialize a c3api class object.
 
         Takes in the following optional kwargs:
+
         - api_root_url:
             - Type: String
             - What: The Root path of the URL
-                - The api URL up to the API Version Number
+                - Note: The api URL up to the API Version Number
             - Default: "https://api.c3.ai/covid/api"
         - api_version:
             - Type: Int
@@ -30,6 +31,7 @@ class c3api(out_formats):
         Change the api_version after the class has been initialized.
 
         Takes in the following required kwarg:
+
         - api_version:
             - Type: Int
             - What: The url path that specifies api version. Example: .../api/{api_version}/...
@@ -41,6 +43,7 @@ class c3api(out_formats):
         Change the api_root_url after the class has been initialized.
 
         Takes in the following required kwarg:
+
         - api_root_url:
             - Type: String
             - What: The Root path of the URL
@@ -53,6 +56,7 @@ class c3api(out_formats):
         Change the api_headers after the class has been initialized.
 
         Takes in the following required kwarg:
+
         - api_headers:
             - Type: Dictionary
             - What: A dictionary of headers to submit with an api post request
@@ -64,6 +68,7 @@ class c3api(out_formats):
         A function to return the full api url for posting a request.
 
         Takes in the following required kwargs:
+
         - data_type:
             - Type: String
             - What: The data "Type" as specified by the c3.ai covid19 documentation
@@ -76,19 +81,21 @@ class c3api(out_formats):
             - Example: "evalmetrics"
 
         Also pulls in the following class variables to build out the URL:
+
         - self.api_root_url
         - self.api_version
-        - Note: These would be specified at the class level using self.change_api_{variable}
+        - Note: These would be specified at the class level using   self.change_api_{variable}
         """
         ordered_list=[self.api_root_url, self.api_version, data_type, api]
         return '/'.join([str(i) for i in ordered_list])
 
-    def request(self, data_type, parameters, api='fetch', output_type="meta", outfile='./output'):
+    def request(self, data_type, parameters, api='fetch', output_type="all", outfile='./output'):
         """
         A function to make a post request to the C3.ai covid19 Data Lake
         and return the results in a python formatted dictionary
 
         Takes in the following required kwargs:
+
         - data_type:
             - Type: String
             - What: The data "Type" as specified by the c3.ai covid19 documentation
@@ -100,15 +107,35 @@ class c3api(out_formats):
             - Example: {"spec": {"filter": 'id == "Germany"'}}
             - More Info: https://c3.ai/covid-19-api-documentation/#section/Using-C3.ai-APIs/Using-fetch
 
-        Takes in the following optional kwarg:
+        Takes in the following optional kwargs:
+
         - api:
             - Type: String
             - What: The API method to post
             - Example: "fetch"
             - Example: "evalmetrics"
             - Default: "fetch"
+        - output_type:
+            - Type: String
+            - What: The output data or file type
+            - Default: "all"
+            - Choices:
+                - all: A dictionary with all returned data
+                - objs: Python list of the returned `objs`
+                - pd: Pandas DF of the returned `objs`
+                - np: Numpy Array of the returned `objs`
+                - csv: Writes a csv and returns python list of the returned `objs`
+                - tab: Writes a tab and returns python list of the returned `objs`
+        - outfile:
+            - Type: String
+            - What: The file path to output to
+            - Default: "./output"
+            - Example: "../my_output"
+            - Note: Do not include the file extension
+            - Note: Is only used in `csv` and `tab` `output_type`s
 
         On HTTPS failure (Non 200 Response):
+        
         - Raises an exception with the response number
         - Cause: May be a number of reasons
             - Most likely: Invalid api_root_url, api_version, data_type or api
