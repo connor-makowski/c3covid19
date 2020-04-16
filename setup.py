@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
   name = 'c3covid19',
-  packages = ['modules'],
+  packages = ['c3covid19'],
   version = '0.1',
   license='MIT',
   description = 'Python wrapper for easy use of the C3 COVID 19 Data Lake',
