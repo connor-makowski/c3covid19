@@ -1,6 +1,7 @@
 import requests
+from c3covid19.formatting import out_formats
 
-class c3api:
+class c3api(out_formats):
     def __init__(self, api_root_url="https://api.c3.ai/covid/api", api_version=1, api_headers={'Content-type':'application/json','Accept':'application/json'}):
         """
         Initialize a c3api class object.
@@ -82,7 +83,7 @@ class c3api:
         ordered_list=[self.api_root_url, self.api_version, data_type, api]
         return '/'.join([str(i) for i in ordered_list])
 
-    def request(self, data_type, parameters, api='fetch'):
+    def request(self, data_type, parameters, api='fetch', output_type="meta", outfile='./output'):
         """
         A function to make a post request to the C3.ai covid19 Data Lake
         and return the results in a python formatted dictionary
@@ -112,8 +113,8 @@ class c3api:
         - Cause: May be a number of reasons
             - Most likely: Invalid api_root_url, api_version, data_type or api
         """
-        data=requests.post(self.get_url(data_type, api), json=parameters, headers=self.api_headers)
+        data=requests.post(self.get_url(data_type=data_type, api=api), json=parameters, headers=self.api_headers)
         if str(data.status_code)=="200":
-            return data.json()
+            return self.get_output(data=data.json(), output_type=output_type, outfile=outfile)
         else:
             raise Exception('HTTPS Request failed with status code: {}'.format(data.status_code))

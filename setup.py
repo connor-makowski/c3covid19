@@ -11,7 +11,8 @@ setup(
   download_url = 'https://github.com/connor-makowski/c3covid19/archive/v_01.tar.gz',
   keywords = ['data', 'lake', 'covid19', 'c3', 'c3covid19'],
   install_requires=[
-        'requests>=2'
+        'requests>=2',
+        'pandas>=1'
       ],
   classifiers=[
     'Development Status :: 3 - Alpha',
