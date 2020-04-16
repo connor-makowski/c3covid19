@@ -29,6 +29,8 @@ class out_formats:
         """
         if output_type=="all":
             return data
+        if 'result' in data:
+            data=data['result']
         else:
             data=data['objs']
         if output_type=="objs":
@@ -47,7 +49,7 @@ class out_formats:
         Takes in the following required kwargs:
 
         - data:
-            - Type: List of Dictionaries
+            - Type: List of Dictionaries || Dictionary
 
         Returns a pandas data frame of the input list
         """
@@ -77,7 +79,7 @@ class out_formats:
             - Note: Do not include the .csv extension
 
         Generates the specified CSV
-        
+
         Returns the input data
         """
         self.as_pd(data).to_csv(outfile+'.csv', index=False)

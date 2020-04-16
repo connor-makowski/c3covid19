@@ -135,7 +135,7 @@ class c3api(out_formats):
             - Note: Is only used in `csv` and `tab` `output_type`s
 
         On HTTPS failure (Non 200 Response):
-        
+
         - Raises an exception with the response number
         - Cause: May be a number of reasons
             - Most likely: Invalid api_root_url, api_version, data_type or api
