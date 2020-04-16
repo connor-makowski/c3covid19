@@ -55,6 +55,8 @@ class out_formats:
         &#34;&#34;&#34;
         if output_type==&#34;all&#34;:
             return data
+        if &#39;result&#39; in data:
+            data=data[&#39;result&#39;]
         else:
             data=data[&#39;objs&#39;]
         if output_type==&#34;objs&#34;:
@@ -73,7 +75,7 @@ class out_formats:
         Takes in the following required kwargs:
 
         - data:
-            - Type: List of Dictionaries
+            - Type: List of Dictionaries || Dictionary
 
         Returns a pandas data frame of the input list
         &#34;&#34;&#34;
@@ -103,7 +105,7 @@ class out_formats:
             - Note: Do not include the .csv extension
 
         Generates the specified CSV
-        
+
         Returns the input data
         &#34;&#34;&#34;
         self.as_pd(data).to_csv(outfile+&#39;.csv&#39;, index=False)
@@ -177,6 +179,8 @@ class out_formats:
         &#34;&#34;&#34;
         if output_type==&#34;all&#34;:
             return data
+        if &#39;result&#39; in data:
+            data=data[&#39;result&#39;]
         else:
             data=data[&#39;objs&#39;]
         if output_type==&#34;objs&#34;:
@@ -195,7 +199,7 @@ class out_formats:
         Takes in the following required kwargs:
 
         - data:
-            - Type: List of Dictionaries
+            - Type: List of Dictionaries || Dictionary
 
         Returns a pandas data frame of the input list
         &#34;&#34;&#34;
@@ -225,7 +229,7 @@ class out_formats:
             - Note: Do not include the .csv extension
 
         Generates the specified CSV
-        
+
         Returns the input data
         &#34;&#34;&#34;
         self.as_pd(data).to_csv(outfile+&#39;.csv&#39;, index=False)
@@ -293,7 +297,7 @@ class out_formats:
         - Note: Do not include the .csv extension
 
     Generates the specified CSV
-    
+
     Returns the input data
     &#34;&#34;&#34;
     self.as_pd(data).to_csv(outfile+&#39;.csv&#39;, index=False)
@@ -335,7 +339,7 @@ class out_formats:
 <section class="desc"><p>Takes in the following required kwargs:</p>
 <ul>
 <li>data:<ul>
-<li>Type: List of Dictionaries</li>
+<li>Type: List of Dictionaries || Dictionary</li>
 </ul>
 </li>
 </ul>
@@ -349,7 +353,7 @@ class out_formats:
     Takes in the following required kwargs:
 
     - data:
-        - Type: List of Dictionaries
+        - Type: List of Dictionaries || Dictionary
 
     Returns a pandas data frame of the input list
     &#34;&#34;&#34;
@@ -466,6 +470,8 @@ class out_formats:
     &#34;&#34;&#34;
     if output_type==&#34;all&#34;:
         return data
+    if &#39;result&#39; in data:
+        data=data[&#39;result&#39;]
     else:
         data=data[&#39;objs&#39;]
     if output_type==&#34;objs&#34;:
