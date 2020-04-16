@@ -12,7 +12,7 @@ class out_formats:
             - What: The output data or file type
             - Choices:
                 - all: A dictionary with all returned data
-                - objs: Python list of the returned `objs`
+                - objs: Python object (dict or list) of the returned `objs` or `result`
                 - pd: Pandas DF of the returned `objs`
                 - np: Numpy Array of the returned `objs`
                 - csv: Writes a csv and returns python list of the returned `objs`
